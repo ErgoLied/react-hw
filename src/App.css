@@ -1,0 +1,4 @@
+.title-cars, .car{
+    display: flex;
+    column-gap: 10px;
+}
