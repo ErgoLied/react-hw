@@ -3,18 +3,18 @@ import Car from "../car/Car";
 import {getCars, setCar} from "../services/car.api";
 
 export default function Cars() {
-    let [formState, setFormState] = useState({model: '', price: '', year: ''});
-    let onFormInputChange = (ev) => {
+    const [formState, setFormState] = useState({model: '', price: '', year: ''});
+    const onFormInputChange = (ev) => {
         setFormState({...formState, [ev.target.name]: ev.target.value});
     }
 
-    let [cars, setCars] = useState([]);
+    const [cars, setCars] = useState([]);
     useEffect(() => {
         getCars().then(value => setCars([...value]));
     },[]);
 
     //set car from form to DB
-    let save = (ev) => {
+    const save = (ev) => {
         ev.preventDefault();
         setCar(formState);
     }
