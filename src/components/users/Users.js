@@ -9,7 +9,6 @@ export default function Users() {
     })
   return (
     <div>
-        {/* eslint-disable-next-line react/jsx-no-undef */}
         {users.map(value => <User key={value.id} item={value}/>)}
     </div>
   );
