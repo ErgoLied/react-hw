@@ -5,7 +5,7 @@ import UserDetails from "../userDetails/UserDetails";
 import {Route} from "react-router-dom";
 
 export default function Users(props) {
-    const {match:{url}} = props;
+    const {match: {url}, history} = props;
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
@@ -13,8 +13,10 @@ export default function Users(props) {
     }, []);
 
     return (
-        <div>
-            {users.map(value => <User key={value.id} item={value}/>)}
+        <div className={'wrap'}>
+            <div className={'info-box'}>
+                {users.map(value => <User history={history} key={value.id} item={value}/>)}
+            </div>
 
             <Route path={`${url}/:id`} render={(props) => {
                 return <UserDetails {...props}/>
