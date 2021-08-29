@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import Car from "../car/Car";
-import {getCars, setCar} from "../services/car.api";
+import {getCars, setCar} from "../../services/car.api";
 
 export default function Cars() {
     const [formState, setFormState] = useState({model: '', price: '', year: ''});
